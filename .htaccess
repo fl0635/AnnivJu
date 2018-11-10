@@ -1,5 +1,5 @@
 php_flag file_uploads on
-php_value upload_tmp_dir "/public_html/utrail/uploads/"
+php_value upload_tmp_dir "/utrail/uploads/"
 php_value upload_max_filesize 10M
 
 RewriteEngine On
