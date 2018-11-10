@@ -3,10 +3,12 @@
 <html>
 
 <head>
-    <base href="{$globals['utrailPath']}">
+    <base href="/utrail/">
     <meta charset="utf-8">
 
     <title>UniverCity Trail</title>
+    <link href="/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -19,19 +21,29 @@
 
                 <a class="nav-link" href="/udev/">
                     Notre entreprise</a>
-               
+                <a class="nav-link active" href="index">
+                    Accueil</a>
+                <a class="nav-link " href="log">
+                    Connexion</a>
 
             </nav>
         </div>
-    </header>
-    
+    </header><main role="main" class="inner cover">
 
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
-        </div>
-    </footer>
+    <h1 class="cover-heading">Course Univer'City Trail de Rennes</h1>
+
+    <p class="lead">
+        <a href="live" class="btn btn-lg btn-secondary">J'accède au direct</a>
+    </p>
+
+</main>	<footer class="mastfoot mt-auto">
+    <div class="inner">
+        <p>App by <a href="https://www.univ-rennes1.fr">University of Rennes 1</a>
+    </div>
+</footer>
 </div>
 
+<script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 
