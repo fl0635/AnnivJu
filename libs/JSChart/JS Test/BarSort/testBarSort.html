@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<button id="sortData">Sort Data</button>
+<button id="addRandomdata">Add Random Data</button>
+<script>
+
+
+
+function sortDps(dps) {
+  do {
+    var swap = false;
+    for(var i = 0; i < dps.length-1; i++) {
+      if(dps[i].y < dps[i+1].y) {
+        var temp = dps[i].y;
+        var tempx = dps[i].x;
+        dps[i].x = dps[i+1].x;
+        dps[i].y = dps[i+1].y;
+        dps[i+1].y = temp;
+        dps[i+1].y = tempx;
+        swap = true;
+      }
+    }
+  }
+  while (swap);
+}
+
+window.onload = function () {
+var data = [
+  { x: 1, y: 71 },
+  { x: 2, y: 55 },
+  { x: 3, y: 50 },
+  { x: 4, y: 65 },
+  { x: 5, y: 92 },
+  { x: 6, y: 68 },
+  { x: 7, y: 38 },
+  { x: 8, y: 71 },
+  { x: 9, y: 54 },
+  { x: 10, y: 60 },
+  { x: 11, y: 36 },
+  { x: 12, y: 49 },
+  { x: 13, y: 21 }
+]
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Test Bar Sort"
+	},
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc
+		//indexx: "{y}", //Shows y value on all Data Points
+		indexxFontColor: "#5A5757",
+		dataPoints: data
+	}]
+});
+
+
+
+document.getElementById('sortData').addEventListener('click', function() {
+  sortDps(chart.options.data[0].dataPoints);
+  console.log(data);
+  chart.render();
+});
+
+document.getElementById("addRandomdata").addEventListener("click", function(){
+chart.data[0].addTo("dataPoints", {x: chart.data[0].dataPoints[chart.data[0].dataPoints.length-1].x + 1 , y: Math.random() * (100 - 10) + 10})
+       });
+       chart.render();
+
+}
+
+</script>
+</head>
+<body>
+
+<div id="chartContainer" style="height: 360px; width: 100%;"></div>
+<script src="canvasjs.min.js"></script>
+</body>
+</html>
