@@ -8,6 +8,6 @@ RewriteCond %{REQUEST_URI} /(images|styles|scripts|libs)/
 RewriteRule .* - [S=4]
 RewriteCond %{REQUEST_URI} /utrail/
 RewriteRule .* - [S=2]
-RewriteRule ^.*$ home.html [NC,S=1]
+RewriteRule ^.*$ old.testsvg.html [NC,S=1]
 RewriteRule .* - [S=1]
 RewriteRule ^utrail\/.*$ utrail/index.php [NC]
